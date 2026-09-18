@@ -15,3 +15,8 @@
 .agenda-follow{display:inline-block;margin-top:2rem;border-bottom:1px solid currentColor;padding-bottom:2px;font:500 .7rem var(--mono);letter-spacing:.04em}.agenda-list[hidden]{display:none}.agenda-event{display:grid;grid-template-columns:48px 1fr auto;gap:1rem;align-items:center;padding:1.1rem 0;border-bottom:1px solid rgba(255,247,223,.5);font-size:.8rem}.agenda-event__date{font:500 .62rem var(--mono)}.agenda-list .agenda-event>div{display:grid;gap:.2rem;padding:0;border:0;font-size:inherit}.agenda-event__date+div span{font:.65rem var(--mono);opacity:.8}.agenda-event a{font:500 .68rem var(--mono);border-bottom:1px solid currentColor;padding-bottom:2px}@media(max-width:780px){.agenda-event{grid-template-columns:30px 1fr}.agenda-event a{grid-column:2;justify-self:start}}
 
 .agenda .section-label span{color:inherit}@media(min-width:781px){.moment-body{grid-column:2}.moment-visual{grid-column:3}.moment-tags{grid-column:4}}
+
+/* El isotipo cierra el contacto y atraviesa, completo, el cambio de fondo. */
+.contact{position:relative;z-index:1;overflow:visible}.contact-logo{position:relative;z-index:2}footer{position:relative;z-index:0}
+
+@media(max-width:780px){footer>span:nth-child(3){grid-column:2;grid-row:1;justify-self:end;text-align:right}}
