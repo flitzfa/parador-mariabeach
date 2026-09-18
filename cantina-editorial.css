@@ -1,0 +1,62 @@
+/* Cantina: composición editorial de copy dominante y mesa compartida como acento. */
+.cantina {
+  grid-template-columns: minmax(0, 640px) minmax(220px, 320px);
+  justify-content: space-between;
+  column-gap: clamp(4rem, 13vw, 13rem);
+  align-items: center;
+}
+
+.cantina-content {
+  max-width: 540px;
+}
+
+.cantina-content h2 {
+  font-size: clamp(4.3rem, 6vw, 6.2rem);
+  line-height: .82;
+  margin: .6rem 0 1.7rem;
+}
+
+.cantina-scene {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  justify-self: start;
+  align-self: center;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+  margin: 0;
+}
+
+.cantina-scene img {
+  object-position: center center;
+}
+
+@media (max-width: 780px) {
+  .cantina {
+    grid-template-columns: 1fr;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    gap: 2.2rem;
+  }
+
+  .cantina-content {
+    order: 1;
+  }
+
+  .cantina-content h2 {
+    font-size: clamp(3.8rem, 16vw, 4.8rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .cantina-scene {
+    width: min(70vw, 270px);
+    height: auto;
+    aspect-ratio: 3 / 4;
+    order: 2;
+    margin: .25rem auto 0;
+    justify-self: center;
+    border-radius: 0;
+  }
+}

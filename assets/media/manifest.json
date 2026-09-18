@@ -1,0 +1,85 @@
+[
+  {
+    "Derivative": "hero-sunset.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.17.37 AM.jpeg",
+    "Width": 720,
+    "Height": 1280,
+    "Bytes": 184383
+  },
+  {
+    "Derivative": "parador-community.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.23.15 AM.jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 308294
+  },
+  {
+    "Derivative": "day-river.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.19.14 AM.jpeg",
+    "Width": 720,
+    "Height": 1280,
+    "Bytes": 169087
+  },
+  {
+    "Derivative": "sunset-beach.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.22.45 AM (3).jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 108620
+  },
+  {
+    "Derivative": "night-deck.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.20.51 AM.jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 187805
+  },
+  {
+    "Derivative": "cantina-pexels-drinks.jpg",
+    "Source": "Pexels photo 6282638",
+    "Original": "source/pexels-6282638-original.jpg",
+    "SourcePage": "https://www.pexels.com/photo/drinking-glass-on-the-table-6282638/",
+    "Author": "Bert Christiaens",
+    "License": "Pexels License — free for commercial web use; attribution not required; no resale of unaltered copies or implied endorsement.",
+    "Downloaded": "2026-09-18",
+    "Crop": "3:4 portrait, source rectangle 4000x5333 at y=300",
+    "Width": 720,
+    "Height": 960,
+    "Bytes": 78075
+  },
+  {
+    "Derivative": "gallery-river-sunset.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.17.32 AM.jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 170252
+  },
+  {
+    "Derivative": "gallery-parador.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.23.38 AM (1).jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 328120
+  },
+  {
+    "Derivative": "gallery-hammock.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.21.56 AM (3).jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 388570
+  },
+  {
+    "Derivative": "gallery-people-river.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.17.53 AM.jpeg",
+    "Width": 1280,
+    "Height": 960,
+    "Bytes": 161728
+  },
+  {
+    "Derivative": "gallery-night-fire.jpg",
+    "Source": "WhatsApp Image 2026-09-15 at 11.22.45 AM.jpeg",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 186087
+  }
+]

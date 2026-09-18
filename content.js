@@ -6,7 +6,6 @@
 window.MARIA_BEACH = {
   instagram: "https://www.instagram.com/paradormariabeach/",
   whatsapp: "https://wa.me/543786414146",
-  maps: "https://www.google.com/maps/search/?api=1&query=Rincon+Santa+Maria%2C+Ituzaingo%2C+Corrientes%2C+Argentina",
-  // Pendiente: reemplazar los bloques de la galería por URLs de fotos originales optimizadas.
-  gallery: []
+  maps: "https://www.google.com/maps/search/?api=1&query=Parador+Mar%C3%ADa+Beach%2C+Calle+J+y+17%2C+Ituzaing%C3%B3%2C+Corrientes%2C+Argentina",
+  events: []
 };

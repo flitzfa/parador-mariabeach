@@ -1,0 +1,112 @@
+/* Galería: recorrido de postales grandes, sin interfaz sobre las fotos. */
+.gallery-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.gallery-journey {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 4.5rem);
+  row-gap: clamp(4.5rem, 9vw, 9rem);
+  margin-top: clamp(3.5rem, 7vw, 7rem);
+}
+
+.gallery-photo {
+  margin: 0;
+  overflow: hidden;
+}
+
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-photo--river {
+  grid-column: 2 / span 4;
+  grid-row: 1;
+  aspect-ratio: 3 / 4;
+}
+
+.gallery-photo--parador {
+  grid-column: 8 / span 4;
+  grid-row: 1;
+  align-self: start;
+  aspect-ratio: 4 / 5;
+  margin-top: clamp(3rem, 7vw, 7rem);
+}
+
+.gallery-photo--people {
+  grid-column: 3 / span 8;
+  grid-row: 2;
+  aspect-ratio: 3 / 2;
+}
+
+.gallery-photo--hammock {
+  grid-column: 2 / span 4;
+  grid-row: 3;
+  align-self: start;
+  aspect-ratio: 3 / 4;
+  margin-top: clamp(-1.5rem, -2vw, -.5rem);
+}
+
+.gallery-photo--night {
+  grid-column: 7 / span 5;
+  grid-row: 3;
+  align-self: start;
+  aspect-ratio: 3 / 4;
+  margin-top: clamp(.5rem, 2vw, 2rem);
+}
+
+@media (max-width: 780px) {
+  .gallery-top {
+    gap: .9rem;
+  }
+
+  .gallery-journey {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 9vw, 3.5rem);
+    margin-top: 3rem;
+  }
+
+  .gallery-photo {
+    aspect-ratio: 3 / 4;
+    margin-top: 0;
+  }
+
+  .gallery-photo--river {
+    width: 91%;
+    align-self: flex-start;
+    margin-bottom: .35rem;
+  }
+
+  .gallery-photo--parador {
+    width: 86%;
+    align-self: flex-end;
+    aspect-ratio: 4 / 5;
+    margin-bottom: -.35rem;
+  }
+
+  .gallery-photo--people {
+    width: 100%;
+    align-self: center;
+    aspect-ratio: 3 / 2;
+    margin-bottom: .45rem;
+  }
+
+  .gallery-photo--hammock {
+    width: 89%;
+    align-self: flex-start;
+    margin-bottom: -.25rem;
+  }
+
+  .gallery-photo--night {
+    width: 91%;
+    align-self: flex-end;
+  }
+}
