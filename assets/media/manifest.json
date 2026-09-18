@@ -1,5 +1,13 @@
 [
   {
+    "Derivative": "maria-beach-og.jpg",
+    "Source": "gallery-river-sunset.jpg and mariabeach-logo.png",
+    "Purpose": "Open Graph social sharing image",
+    "Width": 1200,
+    "Height": 630,
+    "Bytes": 113503
+  },
+  {
     "Derivative": "hero-sunset.jpg",
     "Source": "WhatsApp Image 2026-09-15 at 11.17.37 AM.jpeg",
     "Width": 720,
