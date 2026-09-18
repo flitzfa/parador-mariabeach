@@ -56,6 +56,32 @@
     "Bytes": 78075
   },
   {
+    "Derivative": "cantina-pexels-pizza-beer.jpg",
+    "Source": "Pexels photo 34711268",
+    "Original": "source/pexels-34711268-original.jpg",
+    "SourcePage": "https://www.pexels.com/photo/rustic-wood-fired-pizza-with-beer-on-wooden-table-34711268/",
+    "Author": "Ayla Meinberg",
+    "License": "Pexels License — free for commercial web use; attribution not required; no resale of unaltered copies or implied endorsement.",
+    "Downloaded": "2026-09-18",
+    "Crop": "4:3 landscape, full source 6000x4000",
+    "Width": 720,
+    "Height": 540,
+    "Bytes": 91353
+  },
+  {
+    "Derivative": "cantina-pexels-empanadas.jpg",
+    "Source": "Pexels photo 37049995",
+    "Original": "source/pexels-37049995-original.jpg",
+    "SourcePage": "https://www.pexels.com/photo/delicious-argentine-empanadas-in-rustic-setting-37049995/",
+    "Author": "Gera Cejas",
+    "License": "Pexels License — free for commercial web use; attribution not required; no resale of unaltered copies or implied endorsement.",
+    "Downloaded": "2026-09-18",
+    "Crop": "4:5 portrait, source rectangle 2744x3430 at x=1200",
+    "Width": 432,
+    "Height": 540,
+    "Bytes": 54230
+  },
+  {
     "Derivative": "gallery-river-sunset.jpg",
     "Source": "WhatsApp Image 2026-09-15 at 11.17.32 AM.jpeg",
     "Width": 960,
