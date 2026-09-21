@@ -55,6 +55,8 @@ if (events.length === 0) {
 }
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
+document.documentElement.classList.add('js');
+
 const header = document.querySelector('[data-header]');
 const button = document.querySelector('[data-menu-button]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
