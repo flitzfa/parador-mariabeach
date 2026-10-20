@@ -110,3 +110,25 @@
     align-self: flex-end;
   }
 }
+
+/* Galería administrable: la composición se arma según la cantidad de fotos
+   (ver photos-live.js). Estos ajustes respetan la orientación de cada foto. */
+.gallery-journey .gallery-photo.is-landscape:not(.gallery-photo--people) {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-journey .gallery-photo--people.is-portrait {
+  grid-column: 4 / span 6;
+  aspect-ratio: 4 / 5;
+}
+
+@media (max-width: 780px) {
+  .gallery-journey .gallery-photo.is-landscape:not(.gallery-photo--people) {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-journey .gallery-photo--people.is-portrait {
+    width: 88%;
+    aspect-ratio: 4 / 5;
+  }
+}

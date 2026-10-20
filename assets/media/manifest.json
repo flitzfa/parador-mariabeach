@@ -129,5 +129,36 @@
     "Width": 960,
     "Height": 1280,
     "Bytes": 186087
+  },
+  {
+    "Derivative": "day-shade-parador.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.07 PM.jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Mensaje de Pao: aunque la crecida quite la playa, siguen el parador y la naturaleza",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 293323
+  },
+  {
+    "Derivative": "sunset-deck-crecida.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.10 PM.jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Mensaje de Pao: aunque la crecida quite la playa, siguen el parador y la naturaleza",
+    "Width": 720,
+    "Height": 1280,
+    "Bytes": 95407
+  },
+  {
+    "Derivative": "cantina-pizza-deck.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.37.15 PM.jpeg",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Foto auténtica para la cantina (reemplaza stock de pizza en la composición)",
+    "Crop": "4:3 landscape, source rectangle 720x540 at y=700",
+    "Width": 720,
+    "Height": 540,
+    "Bytes": 75017
   }
 ]

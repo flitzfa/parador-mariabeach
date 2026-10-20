@@ -1,0 +1,5 @@
+# Archivos del repo que no hace falta publicar en la web
+supabase/
+ADMINISTRACION-FOTOS.md
+.env.example
+.env*

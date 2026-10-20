@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="same-origin" />
+    <meta name="theme-color" content="#14344a" />
+    <title>Fotos · María Beach</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fredoka:wght@600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/admin/admin.css?v=20261020" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="topbar">
+      <div class="brand">
+        <img src="/favicon-192.png" alt="" width="44" height="44" />
+        <div>
+          <span class="brand-name">María Beach</span>
+          <span class="brand-sub">Fotos de la web</span>
+        </div>
+      </div>
+      <div class="topbar-actions" data-when="app" hidden>
+        <a class="btn btn--ghost btn--small" href="/" target="_blank" rel="noopener">Ver la web <span aria-hidden="true">↗</span></a>
+        <button class="btn btn--ghost btn--small" type="button" data-action="logout">Salir</button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- Cargando -->
+      <section class="view view--center" data-view="loading">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Cargando…</p>
+      </section>
+
+      <!-- Sin configurar -->
+      <section class="view view--center" data-view="not-configured" hidden>
+        <h1>El panel todavía no está activado</h1>
+        <p>Falta terminar la configuración técnica. Avisale a Fabri: las fotos de la web siguen funcionando como siempre.</p>
+      </section>
+
+      <!-- Inicio de sesión -->
+      <section class="view view--auth" data-view="login" hidden>
+        <h1>Hola 👋</h1>
+        <p class="lead">Entrá con tu correo y tu contraseña para cambiar las fotos de la web.</p>
+        <form class="card form" data-form="login" novalidate>
+          <label for="login-email">Correo electrónico</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" inputmode="email" required />
+          <label for="login-password">Contraseña</label>
+          <div class="password-field">
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+            <button class="btn btn--text btn--small" type="button" data-toggle-password="login-password" aria-pressed="false">Mostrar</button>
+          </div>
+          <p class="form-error" role="alert" data-error></p>
+          <button class="btn btn--primary btn--block" type="submit">Entrar</button>
+        </form>
+        <button class="btn btn--text" type="button" data-go="forgot">Olvidé mi contraseña</button>
+      </section>
+
+      <!-- Recuperar acceso -->
+      <section class="view view--auth" data-view="forgot" hidden>
+        <h1>Recuperar el acceso</h1>
+        <p class="lead">Escribí tu correo y te mandamos un enlace para elegir una contraseña nueva.</p>
+        <form class="card form" data-form="forgot" novalidate>
+          <label for="forgot-email">Correo electrónico</label>
+          <input id="forgot-email" name="email" type="email" autocomplete="username" inputmode="email" required />
+          <p class="form-error" role="alert" data-error></p>
+          <p class="form-ok" role="status" data-ok></p>
+          <button class="btn btn--primary btn--block" type="submit">Enviar enlace</button>
+        </form>
+        <button class="btn btn--text" type="button" data-go="login">Volver a entrar</button>
+      </section>
+
+      <!-- Nueva contraseña (al abrir el enlace del correo) -->
+      <section class="view view--auth" data-view="new-password" hidden>
+        <h1>Elegí una contraseña nueva</h1>
+        <p class="lead">Usá al menos 10 caracteres. Mejor si es una frase que te acuerdes.</p>
+        <form class="card form" data-form="new-password" novalidate>
+          <label for="new-password">Contraseña nueva</label>
+          <input id="new-password" name="password" type="password" autocomplete="new-password" minlength="10" required />
+          <label for="new-password-2">Repetila</label>
+          <input id="new-password-2" name="password2" type="password" autocomplete="new-password" minlength="10" required />
+          <p class="form-error" role="alert" data-error></p>
+          <button class="btn btn--primary btn--block" type="submit">Guardar contraseña</button>
+        </form>
+      </section>
+
+      <!-- Cuenta sin permiso -->
+      <section class="view view--center" data-view="denied" hidden>
+        <h1>Esta cuenta no tiene permiso</h1>
+        <p>Entraste bien, pero esta cuenta no está autorizada para administrar las fotos de María Beach.</p>
+        <button class="btn btn--primary" type="button" data-action="logout">Salir</button>
+      </section>
+
+      <!-- Panel -->
+      <section class="view" data-view="app" hidden>
+        <nav class="tabs" role="tablist" aria-label="Partes del panel">
+          <button class="tab" role="tab" id="tab-postales" aria-controls="panel-postales" aria-selected="true" data-tab="postales">Postales</button>
+          <button class="tab" role="tab" id="tab-secciones" aria-controls="panel-secciones" aria-selected="false" tabindex="-1" data-tab="secciones">Secciones</button>
+          <button class="tab" role="tab" id="tab-biblioteca" aria-controls="panel-biblioteca" aria-selected="false" tabindex="-1" data-tab="biblioteca">Biblioteca</button>
+        </nav>
+
+        <div class="panel" role="tabpanel" id="panel-postales" aria-labelledby="tab-postales" data-panel="postales">
+          <div class="panel-head">
+            <div>
+              <h1>Postales del parador</h1>
+              <p class="muted" data-summary="postales"></p>
+            </div>
+            <button class="btn btn--primary btn--add" type="button" data-action="add" data-destination="gallery"><span aria-hidden="true">＋</span> Agregar fotos</button>
+          </div>
+          <p class="hint">Así se ven en la galería de la web, de arriba hacia abajo. Usá las flechas para cambiar el orden.</p>
+          <ol class="photo-list" data-list="postales"></ol>
+          <div class="empty" data-empty="postales" hidden>
+            <p><strong>Todavía no hay postales.</strong></p>
+            <p>Mientras no haya ninguna publicada, la galería no aparece en la web.</p>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-secciones" aria-labelledby="tab-secciones" data-panel="secciones" hidden>
+          <div class="panel-head">
+            <div>
+              <h1>Fotos de las secciones</h1>
+              <p class="muted">Cada sección de la web tiene una foto principal.</p>
+            </div>
+          </div>
+          <ul class="slot-list" data-list="secciones"></ul>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-biblioteca" aria-labelledby="tab-biblioteca" data-panel="biblioteca" hidden>
+          <div class="panel-head">
+            <div>
+              <h1>Biblioteca</h1>
+              <p class="muted">Fotos guardadas que no están en «Postales». Sirven para las secciones o para sumarlas a la galería.</p>
+            </div>
+            <button class="btn btn--primary btn--add" type="button" data-action="add" data-destination="library"><span aria-hidden="true">＋</span> Agregar fotos</button>
+          </div>
+          <ul class="photo-list photo-list--grid" data-list="biblioteca"></ul>
+          <div class="empty" data-empty="biblioteca" hidden>
+            <p>No hay fotos fuera de «Postales».</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Avisos -->
+    <div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+
+    <input class="sr-only" type="file" accept="image/*" multiple data-file-input tabindex="-1" aria-hidden="true" />
+
+    <!-- Subir fotos -->
+    <dialog class="sheet" data-dialog="upload" aria-labelledby="upload-title">
+      <form method="dialog" class="sheet-inner" data-form="upload">
+        <header class="sheet-head">
+          <h2 id="upload-title">Agregar fotos</h2>
+          <button class="icon-btn" type="button" data-close aria-label="Cerrar">✕</button>
+        </header>
+        <p class="muted" data-upload-intro></p>
+        <ul class="upload-list" data-upload-list></ul>
+        <button class="btn btn--ghost btn--block" type="button" data-action="pick-more">＋ Elegir más fotos</button>
+        <p class="hint">Escribí en cada foto qué se ve (por ejemplo: «Atardecer desde el deck»). Ayuda a quienes usan lectores de pantalla y a Google.</p>
+        <p class="form-error" role="alert" data-upload-error></p>
+        <footer class="sheet-foot">
+          <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+          <button class="btn btn--primary" type="button" data-action="start-upload">Subir</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <!-- Editar textos -->
+    <dialog class="sheet" data-dialog="edit" aria-labelledby="edit-title">
+      <form class="sheet-inner form" data-form="edit" novalidate>
+        <header class="sheet-head">
+          <h2 id="edit-title">Editar foto</h2>
+          <button class="icon-btn" type="button" data-close aria-label="Cerrar">✕</button>
+        </header>
+        <img class="edit-preview" alt="" data-edit-preview />
+        <label for="edit-alt">¿Qué se ve en la foto?</label>
+        <input id="edit-alt" name="alt" type="text" maxlength="200" required />
+        <p class="field-help">Se lee en voz alta para personas ciegas y ayuda a Google. Entre 3 y 200 letras.</p>
+        <label for="edit-description">Descripción (opcional, uso interno)</label>
+        <textarea id="edit-description" name="description" maxlength="300" rows="2"></textarea>
+        <label class="check">
+          <input type="checkbox" name="inGallery" />
+          <span>Mostrar en «Postales del parador»</span>
+        </label>
+        <p class="form-error" role="alert" data-error></p>
+        <footer class="sheet-foot">
+          <button class="btn btn--ghost" type="button" data-close>Cancelar</button>
+          <button class="btn btn--primary" type="submit">Guardar</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <!-- Elegir foto para una sección -->
+    <dialog class="sheet sheet--wide" data-dialog="picker" aria-labelledby="picker-title">
+      <div class="sheet-inner">
+        <header class="sheet-head">
+          <h2 id="picker-title">Elegir foto</h2>
+          <button class="icon-btn" type="button" data-close aria-label="Cerrar">✕</button>
+        </header>
+        <p class="muted" data-picker-hint></p>
+        <ul class="picker-grid" data-picker-list></ul>
+        <footer class="sheet-foot">
+          <button class="btn btn--ghost" type="button" data-action="add" data-destination="library">＋ Subir una foto nueva</button>
+          <button class="btn btn--ghost" type="button" data-close>Cerrar</button>
+        </footer>
+      </div>
+    </dialog>
+
+    <!-- Confirmación -->
+    <dialog class="sheet sheet--small" data-dialog="confirm" aria-labelledby="confirm-title">
+      <form method="dialog" class="sheet-inner">
+        <h2 id="confirm-title" data-confirm-title>¿Seguro?</h2>
+        <p data-confirm-text></p>
+        <footer class="sheet-foot">
+          <button class="btn btn--ghost" value="cancel">Cancelar</button>
+          <button class="btn btn--danger" value="ok" data-confirm-ok>Eliminar</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script src="/admin/vendor/supabase-js-2.117.2.min.js"></script>
+    <script src="/admin/admin.js?v=20261020"></script>
+  </body>
+</html>
