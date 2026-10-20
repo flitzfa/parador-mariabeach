@@ -80,16 +80,101 @@
     }, { threshold: 0.12 })
     : null;
 
+  // Con muchas fotos, la galería no se alarga: las primeras forman el recorrido
+  // editorial y el resto va a un carrusel horizontal «Más postales».
+  const FEATURED = 5;
+  const RAIL_FROM = 8; // con 7 o menos, todas van al recorrido (sin carrusel casi vacío)
+
+  const buildRail = (photos) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'gallery-more reveal';
+    wrap.setAttribute('data-gallery-more', '');
+
+    const head = document.createElement('div');
+    head.className = 'gallery-more__head';
+    const title = document.createElement('p');
+    title.className = 'gallery-more__title';
+    title.id = 'gallery-more-title';
+    title.textContent = 'Más postales';
+    const count = document.createElement('span');
+    count.className = 'gallery-more__count';
+    count.textContent = `${photos.length} fotos`;
+    title.append(' ', count);
+
+    const controls = document.createElement('div');
+    controls.className = 'gallery-more__controls';
+    const makeButton = (dir, label, symbol) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'gallery-more__btn';
+      button.dataset.dir = dir;
+      button.setAttribute('aria-label', label);
+      button.setAttribute('aria-controls', 'gallery-rail');
+      button.innerHTML = `<span aria-hidden="true">${symbol}</span>`;
+      return button;
+    };
+    const prev = makeButton('-1', 'Ver postales anteriores', '←');
+    const next = makeButton('1', 'Ver más postales', '→');
+    controls.append(prev, next);
+    head.append(title, controls);
+
+    const rail = document.createElement('ul');
+    rail.className = 'gallery-rail';
+    rail.id = 'gallery-rail';
+    rail.tabIndex = 0;
+    rail.setAttribute('aria-labelledby', 'gallery-more-title');
+    photos.forEach((photo, index) => {
+      const item = document.createElement('li');
+      item.className = 'gallery-rail__item';
+      item.style.setProperty('--ratio', `${photo.width} / ${photo.height}`);
+      const figure = document.createElement('figure');
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      applyImage(img, photo, '(max-width: 780px) 70vw, 340px');
+      img.alt = photo.alt || `Postal ${index + FEATURED + 1} de María Beach`;
+      figure.append(img);
+      item.append(figure);
+      rail.append(item);
+    });
+
+    const update = () => {
+      const max = rail.scrollWidth - rail.clientWidth - 2;
+      prev.disabled = rail.scrollLeft <= 2;
+      next.disabled = rail.scrollLeft >= max;
+      controls.hidden = max <= 0;
+      rail.tabIndex = max > 0 ? 0 : -1; // solo enfocable si hay algo para desplazar
+    };
+    const step = () => Math.max(rail.clientWidth * 0.8, 240);
+    [prev, next].forEach((button) => button.addEventListener('click', () => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      rail.scrollBy({ left: Number(button.dataset.dir) * step(), behavior: reduce ? 'auto' : 'smooth' });
+    }));
+    rail.addEventListener('scroll', () => window.requestAnimationFrame(update), { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    rail.querySelectorAll('img').forEach((img) => img.addEventListener('load', update, { once: true }));
+    setTimeout(update, 0);
+
+    wrap.append(head, rail);
+    if (revealObserver) revealObserver.observe(wrap);
+    else wrap.classList.add('is-visible');
+    return wrap;
+  };
+
   const renderGallery = (photos) => {
     const valid = photos.filter(isValidPhoto);
+    const oldRail = gallerySection.querySelector('[data-gallery-more]');
+    if (oldRail) oldRail.remove();
     if (valid.length === 0) {
       gallerySection.hidden = true;
       journey.replaceChildren();
       return;
     }
     gallerySection.hidden = false;
+    const useRail = valid.length >= RAIL_FROM;
+    const featured = useRail ? valid.slice(0, FEATURED) : valid;
     const fragment = document.createDocumentFragment();
-    buildRows(valid).forEach((row, rowIndex) => {
+    buildRows(featured).forEach((row, rowIndex) => {
       row.forEach(({ photo, className }) => {
         const figure = document.createElement('figure');
         const landscape = photo.width > photo.height;
@@ -107,7 +192,8 @@
       });
     });
     journey.replaceChildren(fragment);
-    journey.dataset.count = String(valid.length);
+    journey.dataset.count = String(featured.length);
+    if (useRail) journey.after(buildRail(valid.slice(FEATURED)));
   };
 
   const controller = typeof AbortController === 'function' ? new AbortController() : null;

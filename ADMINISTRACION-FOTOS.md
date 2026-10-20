@@ -19,7 +19,7 @@ Esta guía explica cómo activar el panel privado `https://www.paradormariabeach
 
 | Pestaña | Para qué sirve |
 |---|---|
-| **Postales** | La galería «Postales del parador». Agregar fotos, cambiar el orden con flechas, ocultar/publicar, editar el texto y eliminar. |
+| **Postales** | La galería «Postales del parador». Agregar fotos, cambiar el orden con flechas, ocultar/publicar, editar el texto y eliminar. Con hasta 7 fotos publicadas se ven todas en el recorrido grande; desde 8, las primeras 5 quedan en el recorrido y el resto pasa al carrusel horizontal «Más postales», así la página no se alarga. El panel avisa cuáles van al carrusel. |
 | **Secciones** | Elegir qué foto va en: El parador, Día, Atardecer, Noche y las tres fotos de la Cantina. |
 | **Biblioteca** | Fotos guardadas que no están en Postales (por ejemplo, las de las secciones). Se pueden sumar a Postales. |
 

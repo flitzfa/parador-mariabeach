@@ -132,3 +132,120 @@
     aspect-ratio: 4 / 5;
   }
 }
+
+/* «Más postales»: cuando hay muchas fotos, el resto se recorre en horizontal
+   para que la galería no alargue la página (ver photos-live.js). */
+.gallery-more {
+  --rail-h: clamp(280px, 30vw, 420px);
+  --rail-pad: clamp(1.5rem, 8.5vw, 10rem);
+  margin-top: clamp(4.5rem, 9vw, 8rem);
+}
+
+.gallery-more__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.gallery-more__title {
+  margin: 0;
+  font: 500 .65rem/1.4 var(--mono);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.gallery-more__count {
+  margin-left: .5rem;
+  color: var(--sky-deep);
+}
+
+.gallery-more__controls {
+  display: flex;
+  gap: .6rem;
+}
+
+.gallery-more__btn {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font: 500 1.1rem/1 var(--sans);
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s, color .2s, opacity .2s;
+}
+
+.gallery-more__btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.gallery-more__btn:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.gallery-more__btn:focus-visible,
+.gallery-rail:focus-visible {
+  outline: 2px solid var(--sky-deep);
+  outline-offset: 4px;
+}
+
+.gallery-rail {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin: 0 calc(-1 * var(--rail-pad));
+  padding: 0 var(--rail-pad) 1.1rem;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--rail-pad);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 52, 74, .35) transparent;
+}
+
+.gallery-rail__item {
+  flex: none;
+  height: var(--rail-h);
+  aspect-ratio: var(--ratio, 3 / 4);
+  max-width: 82vw;
+  scroll-snap-align: start;
+}
+
+.gallery-rail__item figure {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.gallery-rail__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 780px) {
+  .gallery-more {
+    --rail-h: min(64vw, 340px);
+    --rail-pad: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .gallery-more__btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-more__btn {
+    transition: none;
+  }
+}

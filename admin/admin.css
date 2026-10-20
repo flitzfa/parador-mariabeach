@@ -218,6 +218,9 @@ input:focus, textarea:focus { border-color: var(--sky-deep); outline: none; box-
 .actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; }
 .actions .btn { min-height: 44px; padding: .35rem .8rem; font-size: .9rem; }
 .note { font-size: .82rem; color: var(--muted); margin: 0; }
+.note--rail { color: var(--sky-deep); font-weight: 700; }
+.hint--rail:empty { display: none; }
+.hint--rail { padding: .7rem .9rem; border-radius: 12px; background: var(--sky-soft); color: var(--ink); }
 
 .photo-list--grid .photo-card { grid-template-columns: 112px 1fr; }
 

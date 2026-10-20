@@ -14,6 +14,8 @@
   const MAIN_EDGE = 1600; // lado mayor de la foto publicada
   const THUMB_EDGE = 800; // versión liviana para celulares
   const CONCURRENCY = 2;
+  const FEATURED = 5; // fotos del recorrido grande de «Postales»
+  const RAIL_FROM = 8; // desde esta cantidad, el resto pasa al carrusel
 
   const SLOTS = [
     { id: 'parador', label: 'El parador', where: 'Junto a «Un rincón para volver a respirar».', ratio: '3 / 4' },
@@ -206,13 +208,22 @@
       ? `${published} ${published === 1 ? 'publicada' : 'publicadas'}${hidden ? ` · ${hidden} ${hidden === 1 ? 'oculta' : 'ocultas'}` : ''}`
       : '';
     $('[data-empty="postales"]').hidden = items.length > 0;
+    // Igual que photos-live.js: con 8 o más publicadas, desde la 6.ª van al carrusel.
+    const publishedIds = items.filter((p) => p.is_published).map((p) => p.id);
+    const railIds = new Set(publishedIds.length >= RAIL_FROM ? publishedIds.slice(FEATURED) : []);
+    const where = $('[data-summary="postales-where"]');
+    where.textContent = railIds.size
+      ? `Las primeras ${FEATURED} forman el recorrido grande; las otras ${railIds.size} se ven en el carrusel «Más postales», que se desliza de costado.`
+      : '';
     list.replaceChildren(...items.map((photo, index) => {
       const position = index + 1;
-      return h('li', { class: `photo-card${photo.is_published ? '' : ' is-hidden'}`, 'data-id': photo.id },
+      const inRail = railIds.has(photo.id);
+      return h('li', { class: `photo-card${photo.is_published ? '' : ' is-hidden'}${inRail ? ' is-rail' : ''}`, 'data-id': photo.id },
         thumb(photo, h('span', { class: 'order', 'aria-hidden': 'true', text: position })),
         h('div', { class: 'photo-info' },
           h('p', { class: 'photo-alt' }, h('span', { class: 'sr-only', text: `Foto ${position}: ` }), photo.alt_text),
           badgesFor(photo),
+          inRail ? h('p', { class: 'note note--rail', text: 'Se ve en el carrusel «Más postales».' }) : null,
           slotNote(photo),
           h('div', { class: 'actions' },
             h('button', {

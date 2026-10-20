@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fredoka:wght@600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/admin/admin.css?v=20261020" />
+    <link rel="stylesheet" href="/admin/admin.css?v=20261020-2" />
   </head>
   <body>
     <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -113,6 +113,7 @@
             <button class="btn btn--primary btn--add" type="button" data-action="add" data-destination="gallery"><span aria-hidden="true">＋</span> Agregar fotos</button>
           </div>
           <p class="hint">Así se ven en la galería de la web, de arriba hacia abajo. Usá las flechas para cambiar el orden.</p>
+          <p class="hint hint--rail" data-summary="postales-where"></p>
           <ol class="photo-list" data-list="postales"></ol>
           <div class="empty" data-empty="postales" hidden>
             <p><strong>Todavía no hay postales.</strong></p>
@@ -224,6 +225,6 @@
     </dialog>
 
     <script src="/admin/vendor/supabase-js-2.117.2.min.js"></script>
-    <script src="/admin/admin.js?v=20261020"></script>
+    <script src="/admin/admin.js?v=20261020-2"></script>
   </body>
 </html>
