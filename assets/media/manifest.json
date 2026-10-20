@@ -160,5 +160,65 @@
     "Width": 720,
     "Height": 540,
     "Bytes": 75017
+  },
+  {
+    "Derivative": "postal-mesa-bajo-los-arboles.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.08 PM (1).jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Postales del parador (carrusel «Más postales»), administrable desde /admin/",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 296308
+  },
+  {
+    "Derivative": "postal-pasarela-cabana.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.08 PM (2).jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Postales del parador (carrusel «Más postales»), administrable desde /admin/",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 266861
+  },
+  {
+    "Derivative": "postal-maceta-buda.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.08 PM (3).jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Postales del parador (carrusel «Más postales»), administrable desde /admin/",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 269381
+  },
+  {
+    "Derivative": "postal-arboles-y-arena.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.08 PM.jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Postales del parador (carrusel «Más postales»), administrable desde /admin/",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 294232
+  },
+  {
+    "Derivative": "postal-rincon-plantas.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.09 PM (2).jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Postales del parador (carrusel «Más postales»), administrable desde /admin/",
+    "Width": 960,
+    "Height": 1280,
+    "Bytes": 290222
+  },
+  {
+    "Derivative": "postal-crecida-atardecer.jpg",
+    "Source": "WhatsApp Image 2026-10-19 at 7.40.09 PM (3).jpeg (zip 20/10)",
+    "Folder": "material-pao 19-10-26",
+    "Received": "2026-10-19",
+    "Purpose": "Postales del parador (carrusel «Más postales»), administrable desde /admin/",
+    "Width": 720,
+    "Height": 1280,
+    "Bytes": 86896
   }
 ]
