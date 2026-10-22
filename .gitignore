@@ -1,0 +1,25 @@
+# Material original entregado por el cliente
+material-pao/
+material-pao */
+
+# Capturas utilizadas durante QA/revisión
+review-screenshots/
+
+# Archivos temporales
+tmp/
+
+# Originales de terceros conservados solo como respaldo de licencia
+assets/media/source/
+
+# Documentación interna de curación
+MATERIAL-CURATION.md
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Variables de entorno locales (las reales nunca van al repo)
+.env*
+!.env.example
+.vercel

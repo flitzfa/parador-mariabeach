@@ -87,12 +87,17 @@ const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+// Sin IntersectionObserver (navegadores viejos): todo queda visible desde el inicio.
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+} else {
+  document.querySelectorAll('.reveal').forEach((item) => item.classList.add('is-visible'));
+}
