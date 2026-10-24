@@ -3,3 +3,11 @@ supabase/
 ADMINISTRACION-FOTOS.md
 .env.example
 .env*
+
+# Material privado y de trabajo (no se publica aunque se despliegue con `vercel` desde la PC)
+material-pao/
+material-pao */
+review-screenshots/
+tmp/
+assets/media/source/
+MATERIAL-CURATION.md
